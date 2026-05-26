@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>측량학 T/F 연습</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>측량학 T/F 연습</h1>
+
+  <div class="top-bar">
+
+    <select id="categorySelect">
+      <option value="all">전체 카테고리</option>
+    </select>
+
+    <button id="darkModeBtn">
+      🌙 다크모드
+    </button>
+
+    <button id="examModeBtn">
+      시험모드 OFF
+    </button>
+
+  </div>
+
+  <div class="status">
+
+    <div>
+      점수:
+      <span id="score">0</span>
+    </div>
+
+    <div>
+      진행률:
+      <span id="progress">0 / 0</span>
+    </div>
+
+  </div>
+
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+
+  <div class="card">
+
+    <div id="categoryLabel"></div>
+
+    <div id="question"></div>
+
+    <div class="buttons">
+
+      <button
+        class="true-btn"
+        onclick="checkAnswer(true)"
+      >
+        O
+      </button>
+
+      <button
+        class="false-btn"
+        onclick="checkAnswer(false)"
+      >
+        X
+      </button>
+
+    </div>
+
+    <div id="result"></div>
+
+    <div id="explanation"></div>
+
+    <button
+      id="nextBtn"
+      onclick="nextQuestion()"
+    >
+      다음 문제
+    </button>
+
+  </div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
