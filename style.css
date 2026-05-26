@@ -2,8 +2,10 @@
 
   --bg: #f2f4f8;
   --card: #ffffff;
-  --text: #222;
+  --text: #222222;
+
   --primary: #2563eb;
+
   --correct: #16a34a;
   --wrong: #dc2626;
 
@@ -25,9 +27,18 @@ body {
   background: var(--bg);
   color: var(--text);
 
-  font-family: sans-serif;
+  font-family:
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 
-  transition: 0.3s;
+  transition:
+    background 0.25s,
+    color 0.25s;
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
 
 }
 
@@ -37,10 +48,11 @@ body {
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
-  padding: 30px;
+  padding: 24px;
 
   box-sizing: border-box;
 
@@ -48,21 +60,25 @@ body {
 
 h1 {
 
-  font-size: 42px;
-  margin-bottom: 30px;
+  font-size: 38px;
+
+  margin-bottom: 28px;
+
+  text-align: center;
 
 }
 
 .top-bar {
 
   display: flex;
+
   gap: 12px;
 
   flex-wrap: wrap;
 
   justify-content: center;
 
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 
 }
 
@@ -71,11 +87,13 @@ button {
 
   border: none;
 
-  border-radius: 12px;
+  border-radius: 14px;
 
-  padding: 14px 20px;
+  padding: 14px 18px;
 
   font-size: 18px;
+
+  font-weight: 600;
 
 }
 
@@ -83,7 +101,9 @@ button {
 
   cursor: pointer;
 
-  transition: 0.2s;
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
 
 }
 
@@ -96,20 +116,21 @@ button:hover {
 .status {
 
   display: flex;
-  gap: 30px;
+
+  gap: 28px;
 
   font-size: 22px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
 }
 
 .progress-bar {
 
   width: 100%;
-  max-width: 700px;
+  max-width: 720px;
 
-  height: 18px;
+  height: 16px;
 
   background: #d1d5db;
 
@@ -117,7 +138,7 @@ button:hover {
 
   overflow: hidden;
 
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 
 }
 
@@ -129,25 +150,25 @@ button:hover {
 
   background: var(--primary);
 
-  transition: 0.3s;
+  transition: width 0.3s;
 
 }
 
 .card {
 
   width: 100%;
-  max-width: 850px;
+  max-width: 720px;
 
   background: var(--card);
 
-  border-radius: 24px;
+  border-radius: 26px;
 
-  padding: 50px;
+  padding: 44px;
 
   box-sizing: border-box;
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
+    0 10px 28px rgba(0,0,0,0.08);
 
   text-align: center;
 
@@ -155,21 +176,23 @@ button:hover {
 
 #categoryLabel {
 
-  font-size: 20px;
+  font-size: 18px;
 
   opacity: 0.7;
 
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
 }
 
 #question {
 
-  font-size: 34px;
+  font-size: 32px;
 
   line-height: 1.7;
 
-  margin-bottom: 45px;
+  margin-bottom: 42px;
+
+  word-break: keep-all;
 
 }
 
@@ -177,20 +200,20 @@ button:hover {
 
   display: flex;
 
-  gap: 20px;
-
   justify-content: center;
+
+  gap: 18px;
 
 }
 
 .true-btn,
 .false-btn {
 
-  width: 180px;
+  width: 170px;
 
-  height: 90px;
+  height: 84px;
 
-  font-size: 42px;
+  font-size: 40px;
 
   font-weight: bold;
 
@@ -212,9 +235,9 @@ button:hover {
 
 #result {
 
-  margin-top: 35px;
+  margin-top: 32px;
 
-  font-size: 36px;
+  font-size: 34px;
 
   font-weight: bold;
 
@@ -222,62 +245,151 @@ button:hover {
 
 #explanation {
 
-  margin-top: 25px;
+  margin-top: 22px;
 
-  font-size: 24px;
+  font-size: 22px;
 
-  line-height: 1.8;
+  line-height: 1.75;
+
+  word-break: keep-all;
 
 }
 
 #nextBtn {
 
-  margin-top: 40px;
+  margin-top: 34px;
 
   background: var(--primary);
 
   color: white;
 
-  font-size: 24px;
+  font-size: 22px;
 
-  padding: 18px 30px;
+  padding: 16px 24px;
 
 }
 
+/* 모바일 최적화 */
+
 @media (max-width: 768px) {
 
-  h1 {
+  .container {
 
-    font-size: 30px;
+    padding: 14px;
 
   }
 
-  #question {
+  h1 {
 
-    font-size: 26px;
+    font-size: 22px;
+
+    margin-bottom: 18px;
+
+  }
+
+  .top-bar {
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+
+  }
+
+  select,
+  button {
+
+    font-size: 13px;
+
+    padding: 10px 14px;
+
+  }
+
+  .status {
+
+    font-size: 15px;
+
+    gap: 16px;
+
+    margin-bottom: 14px;
+
+  }
+
+  .progress-bar {
+
+    height: 10px;
+
+    margin-bottom: 18px;
 
   }
 
   .card {
 
-    padding: 30px;
+    padding: 22px;
+
+    border-radius: 18px;
+
+  }
+
+  #categoryLabel {
+
+    font-size: 13px;
+
+    margin-bottom: 14px;
+
+  }
+
+  #question {
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
 
   }
 
   .buttons {
 
-    flex-direction: column;
-
-    align-items: center;
+    gap: 12px;
 
   }
 
   .true-btn,
   .false-btn {
 
-    width: 100%;
+    width: 120px;
 
-    max-width: 320px;
+    height: 62px;
+
+    font-size: 28px;
+
+  }
+
+  #result {
+
+    margin-top: 20px;
+
+    font-size: 24px;
+
+  }
+
+  #explanation {
+
+    margin-top: 16px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+  }
+
+  #nextBtn {
+
+    margin-top: 22px;
+
+    font-size: 18px;
+
+    padding: 12px 18px;
 
   }
 
